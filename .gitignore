@@ -1,0 +1,15 @@
+node_modules
+# Dependency
+/node_modules
+/package-lock.json
+
+# Environment
+.env
+.env.local
+
+# Prisma
+/prisma/migrations
+/dist
+
+# Logs
+npm-debug.log*
