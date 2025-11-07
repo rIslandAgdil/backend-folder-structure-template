@@ -62,6 +62,37 @@ npm run dev
 ```bash
 npm start
 ```
+## 🏗️ Struktur Folder
+```
+backend-template/
+├── node_modules/         # Folder library yang di-install (akan diabaikan Git)
+├── prisma/               # Konfigurasi dan Schema Prisma
+│   └── schema.prisma     # Definisi model database
+│
+├── src/                  # Semua kode sumber aplikasi
+│   ├── config/           # Pengaturan dan koneksi
+│   │   └── prisma.js     # Instance Prisma Client (untuk diimpor)
+│   │
+│   ├── controllers/      # Lapisan HTTP (req, res, memanggil services)
+│   │
+│   ├── middlewares/      # Logika yang dieksekusi sebelum controller (misalnya Auth)
+│   │   ├─ protectedRoute.js
+│   │   └── verifyToken.js   
+│   │
+│   ├── repositories/     # Lapisan Data Access (Interaksi langsung dengan Prisma)
+│   │
+│   ├── routes/           # Mendefinisikan endpoint
+│   │
+│   ├── utils/            # Fungsi pembantu (helper)
+│   │   └── response.js 
+│   │
+│   └── app.js            # Inisialisasi Express, middleware global, dan routes
+│
+├── .env                  # Variabel lingkungan (database URL, JWT_SECRET, dll.)
+├── .gitignore            # File yang harus diabaikan Git
+├── package.json          # Metadata dan daftar dependency
+└── server.js             # Titik awal eksekusi (menjalankan app.js)
+```
 
 ## 🛡️ Authentication dan Security
 ### Middleware Utama
